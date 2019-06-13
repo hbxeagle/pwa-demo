@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script>
-      window.document.location.href =
-        "didifiance://webview?url=https://www.baidu.com";
+      function evokeByIFrame(uri) {
+        if (!iframe) {
+          iframe = document.createElement("iframe");
+          iframe.frameborder = "0";
+          iframe.style.cssText = "display:none;border:0;width:0;height:0;";
+          document.body.appendChild(iframe);
+        }
+
+        iframe.src = uri;
+      }
+      evokeByIFrame("didifiance://webview?url=https://www.baidu.com");
     </script>
   </head>
   <body></body>
