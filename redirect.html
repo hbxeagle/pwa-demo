@@ -6,19 +6,24 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="didifinance://webview?url=https://www.baidu.com">goooooooo~!</a>
     <script>
-      var iframe = null;
-      function evokeByIFrame(uri) {
-        if (!iframe) {
-          iframe = document.createElement("iframe");
-          iframe.frameborder = "0";
-          iframe.style.cssText = "display:none;border:0;width:0;height:0;";
-          document.body.appendChild(iframe);
-        }
+      try {
+        var iframe = null;
+        function evokeByIFrame(uri) {
+          if (!iframe) {
+            iframe = document.createElement("iframe");
+            iframe.frameborder = "0";
+            iframe.style.cssText = "display:none;border:0;width:0;height:0;";
+            document.body.appendChild(iframe);
+          }
 
-        iframe.src = uri;
+          iframe.src = uri;
+        }
+        evokeByIFrame("didifinance://webview?url=https://www.baidu.com");
+      } catch (error) {
+        alert(error.message);
       }
-      evokeByIFrame("didifinance://webview?url=https://www.baidu.com");
     </script>
   </body>
 </html>
